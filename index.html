@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GCART</title>
+<style>
+:root{--bg:#050008;--card:#0c0c12;--accent1:#b35bff;--accent2:#63d2ff;--muted:#cfc7d9}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:#fff;font-family:Poppins,Arial;overflow-x:hidden}
+header{position:sticky;top:0;display:flex;justify-content:space-between;padding:15px 25px;backdrop-filter:blur(8px);z-index:10;background:rgba(0,0,0,0.35)}
+.brand{font-size:22px;color:var(--accent1);font-weight:800;letter-spacing:4px}
+nav button{background:none;border:0;color:var(--muted);font-weight:600;margin-left:14px;cursor:pointer}
+nav button.active,nav button:hover{color:var(--accent2)}
+section{padding:70px 20px;max-width:1100px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);padding:20px;border-radius:12px}
+h2{color:var(--accent2);margin-bottom:20px}
+h3{color:var(--accent1);margin-bottom:10px}
+pre{white-space:pre-wrap;line-height:1.6;color:#ddd}
+.hero{text-align:center;padding:90px 10px}
+.hero h1{font-size:60px;color:var(--accent1)}
+.hero p{color:#d1cfe0;margin-top:10px}
+.cta{display:inline-block;margin-top:20px;background:var(--accent1);padding:12px 20px;border-radius:12px;color:#000;font-weight:700;text-decoration:none}
+footer{text-align:center;margin-top:40px;padding:20px;color:#aaa;border-top:1px solid rgba(255,255,255,0.06)}
+#particles{position:fixed;left:0;top:0;width:100%;height:100%;z-index:-1}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+<header>
+  <div class="brand">GCART</div>
+  <nav>
+    <button onclick="show('home')" id="btn-home">Home</button>
+    <button onclick="show('samples')" id="btn-samples">Samples</button>
+    <button onclick="show('owners')" id="btn-owners">Owners</button>
+    <button onclick="show('prices')" id="btn-prices">Prices</button>
+    <button onclick="show('terms')" id="btn-terms">Terms</button>
+    <button onclick="show('refund')" id="btn-refund">Refund</button>
+    <button onclick="show('buy')" id="btn-buy">Buy</button>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="page">
+  <div class="hero">
+    <h1>GCART</h1>
+    <p>Thumbnails • Logos • Banners • AI Art • Learning</p>
+    <a class="cta" href="https://discord.gg/xDQEXf7G" target="_blank">BUY ON DISCORD</a>
+  </div>
+</section>
+
+<!-- SAMPLES -->
+<section id="samples" class="page" style="display:none">
+  <h2>Our Work Samples</h2>
+  <div class="grid">
+    <div class="card"><img src="https://i.postimg.cc/Gps2bs4d/image.png" style="width:100%;border-radius:10px" /></div>
+    <div class="card"><img src="https://i.postimg.cc/prS4Vyhb/image.png" style="width:100%;border-radius:10px" /></div>
+    <div class="card"><img src="https://i.postimg.cc/wB4HSxqc/image.png" style="width:100%;border-radius:10px" /></div>
+  </div>
+</section>
+
+<!-- OWNERS -->
+<section id="owners" class="page" style="display:none">
+  <h2>Owners</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Main Owner — Yagi Sheep</h3>
+      <p>Founder & Main Owner. Maker/Designer.</p>
+    </div>
+    <div class="card">
+      <h3>Owner — King</h3>
+      <p>Owner & Developer. Handles website, system pipeline, and delivery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices" class="page" style="display:none">
+  <h2>Prices</h2>
+  <div class="grid">
+    <div class="card"><h3>Thumbnails</h3><pre>Average: 89₹ High: 119₹ Advanced: 139₹</pre></div>
+    <div class="card"><h3>Logos</h3><pre>Average: 49₹ High: 79₹ Advanced: 119₹</pre></div>
+    <div class="card"><h3>Banners</h3><pre>Average: 59₹ High: 89₹ Advanced: 129₹</pre></div>
+    <div class="card"><h3>Animation</h3><pre>Average: 129₹ High: 159₹ Advanced: 199₹</pre></div>
+    <div class="card"><h3>Editing</h3><pre>Average: 99₹ High: 149₹ Advanced: 199₹</pre></div>
+    <div class="card"><h3>Plugin</h3><pre>Average: 159₹ High: 189₹ Advanced: 219₹</pre></div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section id="terms" class="page" style="display:none">
+  <h2>Terms & Conditions</h2>
+  <pre>All payments must be made before work begins (30% advance).
+Work starts only after full details.
+2 free revisions.
+No rush, spam, disrespect allowed.
+Designs can't be resold.
+Portfolio rights kept unless privacy paid.
+Prices may change.
+Extreme changes cost extra.
+</pre>
+</section>
+
+<!-- REFUND -->
+<section id="refund" class="page" style="display:none">
+  <h2>Refund Policy</h2>
+  <pre>30% advance is NON-REFUNDABLE.
+No refund after work starts.
+No refund after preview.
+Full refund only if: Full amount paid + Work not started.
+No refund after final delivery.</pre>
+</section>
+
+<!-- BUY -->
+<section id="buy" class="page" style="display:none">
+  <h2>How to Order</h2>
+  <pre>1) Choose service.
+2) Send order format in Discord.
+3) Pay 30% advance.
+4) Get preview + revisions.
+5) Final delivery after payment.
+Discord: https://discord.gg/xDQEXf7G</pre>
+</section>
+
+<footer>GCART © 2025 — Website by King</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('nav button').forEach(btn=>btn.classList.remove('active'));
+  document.getElementById('btn-'+id).classList.add('active');
+}
+
+// PARTICLES
+const c = document.getElementById('particles');
+const ctx = c.getContext('2d');
+let w, h, parts = [];
+function resize(){w=c.width=innerWidth;h=c.height=innerHeight;create();}
+window.onresize = resize;
+function create(){parts=[];for(let i=0;i<120;i++){parts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+1,vx:Math.random()*0.4-0.2,vy:Math.random()*0.4-0.2})}}
+function draw(){ctx.clearRect(0,0,w,h);for(let p of parts){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle="rgba(180,110,255,0.5)";ctx.fill();}requestAnimationFrame(draw)}
+resize();draw();
+</script>
+
+</body>
+</html>
